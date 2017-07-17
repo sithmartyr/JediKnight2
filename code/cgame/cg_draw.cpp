@@ -766,7 +766,6 @@ static void CG_Speedometer(centity_t *cent)
 		colorSpeed[2] = 1 / ((currentSpeed / 250)*(currentSpeed / 250));
 	}
 
-	//t = trap_Milliseconds();
 	t = cgi_Milliseconds();
 
 	frameTime = t - previous;
@@ -809,28 +808,18 @@ static void CG_Speedometer(centity_t *cent)
 	if (cg_speedometer.integer == 1)
 	{
 		Com_sprintf(speedStr, sizeof(speedStr), "   %.0f", floorf(currentSpeed + 0.5f));
-		//CG_Text_Paint(cg_speedometerX.integer, cg_speedometerY.integer, cg_speedometerSize.value, colorWhite, accelStr, 0.0f, 0, ITEM_ALIGN_RIGHT | ITEM_TEXTSTYLE_OUTLINED, FONT_NONE);
-		//CG_Text_Paint(cg_speedometerX.integer, cg_speedometerY.integer, cg_speedometerSize.value, colorSpeed, speedStr, 0.0f, 0, ITEM_ALIGN_RIGHT | ITEM_TEXTSTYLE_OUTLINED, FONT_NONE);
 		cgi_R_Font_DrawString(cg_speedometerX.integer, cg_speedometerY.integer, accelStr, colorTable[CT_WHITE], cgs.media.qhFontMedium, -1, cg_speedometerSize.value);
 		cgi_R_Font_DrawString(cg_speedometerX.integer, cg_speedometerY.integer, speedStr, colorSpeed, cgs.media.qhFontMedium, -1, cg_speedometerSize.value);
-
-
-		//FOR REFERENCE ONLY cgi_R_Font_DrawString(635 - w, y + 2, s, colorTable[CT_LTGOLD1], cgs.media.qhFontMedium, -1, 1.0f);
-
 	}
 	else if (cg_speedometer.integer == 2)
 	{
 		Com_sprintf(speedStr2, sizeof(speedStr2), "   %.1f", currentSpeed * 0.05);
-		//CG_Text_Paint(cg_speedometerX.integer, cg_speedometerY.integer, cg_speedometerSize.value, colorWhite, accelStr2, 0.0f, 0, ITEM_ALIGN_RIGHT | ITEM_TEXTSTYLE_OUTLINED, FONT_NONE);
-		//CG_Text_Paint(cg_speedometerX.integer, cg_speedometerY.integer, cg_speedometerSize.value, colorSpeed, speedStr2, 0.0f, 0, ITEM_ALIGN_RIGHT | ITEM_TEXTSTYLE_OUTLINED, FONT_NONE);
 		cgi_R_Font_DrawString(cg_speedometerX.integer, cg_speedometerY.integer, accelStr2, colorTable[CT_WHITE], cgs.media.qhFontMedium, -1, cg_speedometerSize.value);
 		cgi_R_Font_DrawString(cg_speedometerX.integer, cg_speedometerY.integer, speedStr2, colorSpeed, cgs.media.qhFontMedium, -1, cg_speedometerSize.value);
 	}
 	else if (cg_speedometer.integer > 2)
 	{
 		Com_sprintf(speedStr3, sizeof(speedStr3), "   %.1f", currentSpeed * 0.03106855);
-		//CG_Text_Paint(cg_speedometerX.integer, cg_speedometerY.integer, cg_speedometerSize.value, colorWhite, accelStr3, 0.0f, 0, ITEM_ALIGN_RIGHT | ITEM_TEXTSTYLE_OUTLINED, FONT_NONE);
-		//CG_Text_Paint(cg_speedometerX.integer, cg_speedometerY.integer, cg_speedometerSize.value, colorSpeed, speedStr3, 0.0f, 0, ITEM_ALIGN_RIGHT | ITEM_TEXTSTYLE_OUTLINED, FONT_NONE);
 		cgi_R_Font_DrawString(cg_speedometerX.integer, cg_speedometerY.integer, accelStr3, colorTable[CT_WHITE], cgs.media.qhFontMedium, -1, cg_speedometerSize.value);
 		cgi_R_Font_DrawString(cg_speedometerX.integer, cg_speedometerY.integer, speedStr3, colorSpeed, cgs.media.qhFontMedium, -1, cg_speedometerSize.value);
 	}
