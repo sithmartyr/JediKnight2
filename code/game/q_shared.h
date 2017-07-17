@@ -417,6 +417,20 @@ CT_MAX
 
 extern vec4_t colorTable[CT_MAX];
 
+extern	vec4_t		colorBlack;
+extern	vec4_t		colorRed;
+extern	vec4_t		colorGreen;
+extern	vec4_t		colorBlue;
+extern	vec4_t		colorYellow;
+extern	vec4_t		colorMagenta;
+extern	vec4_t		colorCyan;
+extern	vec4_t		colorWhite;
+extern	vec4_t		colorLtGrey;
+extern	vec4_t		colorMdGrey;
+extern	vec4_t		colorDkGrey;
+extern	vec4_t		colorLtBlue;
+extern	vec4_t		colorDkBlue;
+
 
 #define Q_COLOR_ESCAPE	'^'
 // you MUST have the last bit on here about colour strings being less than 7 or taiwanese strings register as colour!!!!
@@ -1666,6 +1680,22 @@ typedef enum
 	eForceReload_ALL
 
 } ForceReload_e;
+
+
+#define ITEM_TEXTSTYLE_NORMAL 0           // normal text
+#define ITEM_TEXTSTYLE_BLINK 1            // fast blinking
+#define ITEM_TEXTSTYLE_PULSE 2            // slow pulsing
+#define ITEM_TEXTSTYLE_SHADOWED 3         // drop shadow ( need a color for this )
+#define ITEM_TEXTSTYLE_OUTLINED 4         // drop shadow ( need a color for this )
+#define ITEM_TEXTSTYLE_OUTLINESHADOWED 5  // drop shadow ( need a color for this )
+#define ITEM_TEXTSTYLE_SHADOWEDMORE 6         // drop shadow ( need a color for this )
+
+enum {
+	FONT_NONE,
+	FONT_SMALL = 1,
+	FONT_MEDIUM,
+	FONT_LARGE
+};
 
 
 #include "../game/genericparser2.h"

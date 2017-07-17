@@ -497,6 +497,10 @@ Ghoul2 Insert End
 */
 	overrides_t	overrides;	//for overriding certain third-person camera properties
 
+	struct {
+		float				maxSpeed, currentSpeed;
+	} jk2pro;
+
 } cg_t;
 
 
@@ -541,6 +545,11 @@ extern	centity_t		cg_entities[MAX_GENTITIES];
 extern	weaponInfo_t	cg_weapons[MAX_WEAPONS];
 extern	itemInfo_t		cg_items[MAX_ITEMS];
 extern	markPoly_t		cg_markPolys[MAX_MARK_POLYS];
+
+extern	vmCvar_t		cg_speedometer;
+extern	vmCvar_t		cg_speedometerX;
+extern	vmCvar_t		cg_speedometerY;
+extern	vmCvar_t		cg_speedometerSize;
 
 
 extern	vmCvar_t		cg_centertime;

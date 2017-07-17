@@ -231,6 +231,11 @@ typedef struct {
 
 inventoryInfo_t		cg_inventory[INV_MAX];
 
+vmCvar_t	cg_speedometer;
+vmCvar_t	cg_speedometerX;
+vmCvar_t	cg_speedometerY;
+vmCvar_t	cg_speedometerSize;
+
 
 vmCvar_t	cg_centertime;
 vmCvar_t	cg_runpitch;
@@ -339,6 +344,11 @@ cvarTable_t		cvarTable[] = {
 	{ &cg_fov, "cg_fov", "80", 0 },//must be 80
 	{ &cg_stereoSeparation, "cg_stereoSeparation", "0.4", CVAR_ARCHIVE  },
 	{ &cg_shadows, "cg_shadows", "1", CVAR_ARCHIVE  },
+
+	{ &cg_speedometer, "cg_speedometer", "0", 0 },
+	{ &cg_speedometerX, "cg_speedometerX", "132", 0 },
+	{ &cg_speedometerY, "cg_speedometerY", "459", 0 },
+	{ &cg_speedometerSize, "cg_speedometerSize", "0.75", 0 },
 
 	{ &cg_draw2D, "cg_draw2D", "1", CVAR_ARCHIVE  },
 	{ &cg_drawStatus, "cg_drawStatus", "1", CVAR_ARCHIVE  },
